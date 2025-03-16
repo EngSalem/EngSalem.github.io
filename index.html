@@ -1,147 +1,830 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Mohamed Salem Elaraby (Salem) Homepage</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/jquery.scrollzer.min.js"></script>
-		<script src="js/jquery.scrolly.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
 
-		<script>
-			var _hmt = _hmt || [];
-			(function() {
-			  var hm = document.createElement("script");
-			  hm.src = "//hm.baidu.com/hm.js?8aeec6af5960ba3cf76482d164fbdd4f";
-			  var s = document.getElementsByTagName("script")[0]; 
-			  s.parentNode.insertBefore(hm, s);
-			})();
-		</script>
-		
-		<script>
-			 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <title>Mohamed Salem Elarab (Salem)</title>
 
-			  ga('create', 'UA-86127789-1', 'auto');
-			  ga('send', 'pageview');
-		</script>
+  <meta name="author" content="Mohamed Salem Elaraby">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	</head>
-	<body>
-		<div id="wrapper">
+  <link rel="stylesheet" type="text/css" href="./salem_files/stylesheet.css">
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;%F0%9F%8C%90&lt;/text&gt;&lt;/svg&gt;">
+<style>
+  .bibButton {
+    background-color: hsl(0, 0%, 98%);
+    color: #0756abc2;
+    border: none;
+    padding: 0px 1px;
+    cursor: pointer;
+    font-size: 12px;
+  }
 
-			<!-- Header -->
-				<section id="header" class="skel-layers-fixed">
-					<header>
-						<span class="image avatar"><img src="images/me.jpeg" alt="" /></span>
-						<h1 id="logo"><a href="#">Mohamed Salem</a></h1>
-					</header>
-					<nav id="nav">
-						<ul>
-							<li><a href="#About" class="active">About</a></li>
-							<li><a href="#Publications">Publications</a></li>
-							<li><a href="#Research">Research</a></li>
+  .bibButton:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+  }
 
-						</ul>
-					</nav>
-				</section>
+  .bibliography {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+  }
 
-			<!-- Main -->
-				<div id="main">
+  .bib-entry {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+  }
 
-					<!-- About -->
-						<section id="About">
-							<div class="container">
-								<header class="major">
-									<h2>Mohamed Salem Elaraby (Salem)</h2>
-									<p>
-										<a>mse30[At]pitt[Dot]edu</a> &nbsp
-										<a href="files/resume.2022.pdf"><font color="3498DB">[CV]</font></a> &nbsp
-										<a href="https://www.linkedin.com/in/mohamed-salem-b25b24b6/"><font color="3498DB">[LinkedIn]</font></a> &nbsp
-										<a href="https://github.com/EngSalem"><font color="3498DB">[GitHub]</font></a> &nbsp
-										<a href="https://scholar.google.com.eg/citations?user=A5jMCaAAAAAJ&hl=en"><font color="3498DB">[Scholar]</font></a>
-									</p>									
-								</header>
-								<p> <strong>Summer 2023:</strong> I am currently working as a <strong>research intern</strong> at <strong>Tiktok Inc.</strong> in San Jose.
-								<p>I am currently a second year Ph.D. student in <a href="https://petal-cs-pitt.github.io/"><font color="3498DB">Pitt EducaTional And Language technology lab (PETAL)</font></a>, <a href="https://www.sci.pitt.edu/"><font color="3498DB">The University of Pittsburgh</font></a>, advised by Prof. <a href="https://people.cs.pitt.edu/~litman/"><font color="3498DB">Diane J. Litman</font></a>. </p>
-								<p>My research is focused on Natural Language Processing with focus on text summarization.</p>
-								<p> From 2020 to 2021 I worked as an <strong> applied Datascientist </strong> in the CSALT team (Cairo Speech and Language Technology) at <strong>Microsoft ATLC</strong> in developing Arabic speech recognition models.</p>
-								<p> From 2018 to 2020 I worked as a <strong> Datascientist II </strong> at <strong>Raisa Energy LLC.</strong> working on various datascience tasks</p>
-								<p>I received my Bachelors (Bsc) in 2014 from <strong> Cairo University </strong> in Communications and Computer Engineering, and my Master of science (Msc) in 2017 in Electronics and Computer Communications from the same University.</p>
-							</div>
-						</section>
+  .bib-title {
+    font-weight: bold;
+    color: #007bff;
+    margin: 0;
+  }
 
-					<!-- Publications -->
-						<section id="Publications">
-							<div class="container">
-								<h3>Publications</h3>
+  .bib-info {
+    margin: 2px 0;
+    /* Adjust the margin here */
+  }
+  /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
-									<ul>
-										<li><strong>Mohamed Elaraby</strong>,Yang Zhong and Diane Litman "Towards Argument-Aware Abstractive Summarization of Long Legal Opinions with Summary Reranking" <i>Fingings ACL.</i>2023<a href="https://arxiv.org/pdf/2306.00672.pdf">[pdf]</a></li>
-										<li><strong>Mohamed Elaraby</strong>, and Diane Litman "ArgLegalSumm: Improving Abstractive Summarization of Legal Documents with Argument Mining." <i>COLING .</i>2022<a href="https://aclanthology.org/2022.coling-1.540.pdf">[pdf]</a></li>
-										<li><strong>Mohamed Elaraby</strong>, and Diane Litman "Self-trained Pretrained Language Models for Evidence Detection"  <i>ArgMining @EMNLP .</i>2021<a href="https://aclanthology.org/2021.argmining-1.14/">[pdf]</a></li>
-										<li>Ahmed Magooda,<strong>Mohamed Elaraby</strong>, and Diane Litman "Exploring Multitask Learning for Low-Resource AbstractiveSummarization"  <i>Findings @ EMNLP 2021</i> <a href="https://arxiv.org/abs/2109.08565">[pdf]</a></li>
-									    <li><strong>Mohamed Elaraby</strong>, and Ahmed Ismail Zahran "A Character Level Convolutional BiLSTM for Arabic Dialect Identification"  <i>WANLP @ ACL 2019</i> <a href="https://aclanthology.org/W19-4636.pdf">[pdf]</a></li>
-										<li><strong>Mohamed Elaraby</strong>, and Muhammad-Abdulmageed "Deep Models for Arabic Dialect Identification on Benchmarked Data"  <i>Vardial @ COLING 2018</i> <a href="https://aclanthology.org/W18-3930.pdf">[pdf]</a></li>
-										<li>Hassan Alhuzali , <strong>Mohamed Elaraby</strong>, and Muhammad-Abdulmageed "UBC-NLP at IEST 2018: Learning Implicit Emotion With an Ensemble of Language Models"  <i>WASSA @ EMNLP 2018</i> <a href="https://aclanthology.org/W18-6250.pdf">[pdf]</a></li>
-									    <li>Muhammad-AbdulMageed, Hassan Alhuzali , and <strong>Mohamed Elaraby</strong>, "You Tweet What You Speak: A City-Level Dataset of Arabic Dialects"  <i>LREC 2018</i> <a href="https://aclanthology.org/L18-1577.pdf">[pdf]</a></li>
-										<li> Hany Ahmed ,  <strong>Mohamed Elaraby</strong>, Abdullah M. Moussa, Mustafa Abdullah, Sherif M. Abdou, and Mohsen Rashwan "An Unsupervised Speaker Clustering Technique based on SOM and I-vectors for Speech Recognition Systems"  <i>WANLP @EACL 2017</i> <a href="https://aclanthology.org/W17-1310.pdf">[pdf]</a></li>
-										<li><strong>Mohamed Elaraby</strong>, Mustafa Abdullah, Sherif M. Abdou and Mohsen Rashwan "A Deep Neural Networks (DNN) Based Models for a Computer Aided Pronunciation Learning System"  <i>SPECOM 2016</i> <a href="https://link.springer.com/chapter/10.1007/978-3-319-43958-7_5">[Link]</a></li>
-									</ul>
+/* Navbar */
+.navbar {
+    background-color: #0056b3;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-							</div>
-						</section>
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-					<!-- Research -->
-						<section id="Research">
-							<div class="container">
-								<h3>Selected Research Projects</h3>
-								<div class="features">
-									<article>
-										<a href="#" class="image"><img src="images/system_diag.png" alt="" /></a>
-										<div class="inner">
-											<h4>CASUM</a>
-											</h4>
-											<p>CASUM aims at summarizing case decisions in terms of legal argument triples: the major issues a court addressed in the case, the court's conclusion with respect to each issue, and the court's reasons for reaching the conclusion. Given the legal case, we extract the legal triplets which aid the abstractive summarization process to include the legal arguments described in the document.</p>
-										</div>
-									</article>
+.nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
 
-									<article>
-										<a href="#" class="image"><img src="images/coursemirror.png" alt="" /></a>
-										<div class="inner">
-											<h4>Course Mirror</a>
-											</h4>
-											<p>CourseMIRROR facilitates learning at scale by enabling students to reflect in-situ via mobile devices. CourseMIRROR also helps instructors to capture the gist of reflections effectively via natural language processing.</p>
-										</div>
-									</article>
-								</div>
-							</div>
-						</section>
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
 
-				</div>
+.nav ul li a:hover {
+    color: #ffcc00;
+}
 
-			<!-- Footer -->
-				<section id="footer">
-					<div class="container">
-						<ul class="copyright">
-							<li>&copy; Mohamed Elaraby 2022</li>
-						</ul>
-					</div>
-				</section>
-			
-		</div>
-	</body>
-</html>
+/* Headings */
+heading {
+    font-size: 24px;
+    font-weight: bold;
+    display: block;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    color: #0056b3;
+}
+
+/* Content Containers */
+.section {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 850px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Profile Picture */
+img {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Links */
+a {
+    color: #0056b3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+/* Buttons */
+.bibButton {
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.bibButton:hover {
+    background: #ffcc00;
+    color: black;
+}
+
+/* News List */
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: separate;
+}
+
+td {
+    padding: 10px;
+}
+
+/* Publications Section */
+.papertitle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.papertitle:hover {
+    color: #ffcc00;
+}
+
+/* Footer */
+hr {
+    border: 1px solid #ddd;
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    background: #0056b3;
+    color: white;
+}
+
+</style><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: circular;
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: circular;
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+}</style></head>
+
+
+
+<body>
+
+  <div class="navbar">
+    <div class="nav">
+      <ul>
+
+        <li><a href="https://engsalem.github.io//#">Home</a>
+          <div class="nav-box"></div>
+        </li>
+
+        <li><a href="https://engsalem.github.io//#Publications">Publications</a>
+          <div class="nav-box"></div>
+        </li>
+        <li><a href="https://engsalem.github.io//#Service">Services</a>
+          <div class="nav-box"></div>
+        </li>
+
+        
+        <li><a href="https://engsalem.github.io//#Contact">Contact</a>
+          <div class="nav-box"></div>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+  <table style="width:100%;max-width:850px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:63%;vertical-align:middle">
+                  <p style="text-align:center">
+                    <name>Mohamed Salem Elaraby</name>
+                  </p>
+                  <p>I am a fourth year PhD student in the <a href="https://cs.pitt.edu/">computer science department</a>
+                    at <a href="https://www.pitt.edu/">University of Pittsburgh</a>, supervised  by <a href="https://people.cs.pitt.edu/~litman/">Diane Litman</a>. 
+                    My research is mainly focused on <b>Computational Argumentation </b>and <b>Text Summarization</b>.
+                  </p>
+                  <p>
+                    I received my M.sc at <a href="http://www.eng.cu.edu.eg/">Cairo University</a>, under the supervision of  <a href="http://eece.cu.edu.eg/content/mohsen-rashwan">Mohsen Rashwan</a>.
+                  </p>
+                  <p>
+                    I previously worked as a research intern at <a href="http://www.eng.cu.edu.eg/">Tiktok/ByteDance research</a> SAMI (Speech Audio Music and Language Intelligence) team and <a href="http://www.eng.cu.edu.eg/">Microsoft</a> in ROAR (Research and OpenAI team). 
+
+                  <p style="text-align:center">
+                    <a href="mailto:mse30@pitt.edu">Email</a> &nbsp;/&nbsp;
+                    <a href="https://engsalem.github.io/data/mohamed.salem.resume.pdf">CV</a> &nbsp;/&nbsp;
+
+                    <a href="https://scholar.google.com.eg/citations?user=A5jMCaAAAAAJ&hl=en">Google Scholar</a>
+                    &nbsp;/&nbsp;
+                    <a href="https://twitter.com/MsalemUBC">Twitter</a> &nbsp;/&nbsp;
+                    <a href="https://github.com/engsalem">Github</a>
+                  </p>
+                </td>
+                <td style="padding:2.5%;width:40%;max-width:40%">
+                  <a href="./salem_files/me.jpg"><img style="width:90%;max-width:100%" alt="profile photo" src="./salem_files/me.jpg" class="hoverZoomLink"></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <heading>News</heading>
+                  <p>
+                  </p><ul>
+                    <li> <b>🎉 September 2024</b> Our <a href="https://aclanthology.org/2024.findings-emnlp.836.pdf">paper</a> got accepted to <b>EMNLP2024(Findings!)</b> see you in Miami 🌴</li>
+                    <li> <b>May 2024</b> Started my internship at  Microsft ROAR team</li>
+                    <li> <b>🎉 April 2024</b>: I passed my Oral PhD Comprehensive Exam with flying colors! Big
+                      thanks to my commitee members: <a href="https://people.cs.pitt.edu/~litman/">Prof. Diane
+                        Litman</a>, <a href="https://people.cs.pitt.edu/~xianglli/">Prof. Xiang Lorraine Li</a> and <a href="https://people.cs.pitt.edu/~kovashka/">Prof. Adriana  Kovashka</a>.</li>
+                    <li> <b>March 2024</b>: Our <a href="https://arxiv.org/abs/2403.19012">ReflectSumm</a> paper
+                      will appear at LREC-COLING this year!</li>
+                    <li> <b>Oct 2023</b>: Our <b> <a href="https://arxiv.org/pdf/2310.12172.pdf">Overview paper</a></b>
+                      on the <a href="https://imagearg.github.io/">ImageArg Shared
+                        Task</a> is out! See you at EMNLP this year!</li>
+                    <li><b>May 2023</b>: I am co-organizing <a href="https://imagearg.github.io/">ImageArg Shared
+                        Task</a> in the <a href="https://argmining-org.github.io/2023/">10th
+                        ArgMining Workshop</a> at EMNLP 2023 in Singapore.</li>
+                  </ul>
+
+                  <p></p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:middle">
+                  <heading>Research</heading>
+                  <p>
+                    My research interests lies within Natural Language Processing with a focus on Text Generation (Summarization) and Argument Mining.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div id="Publications" class="section">
+            <!-- have some headers-->
+            <heading>Selected Publications</heading>
+            <p></p><table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+              <tbody>
+
+                <tr>
+                  <!-- REFLECTSUMM paper -->
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="./salem_files/persuasive_rationales.png" alt="PontTuset" width="200" style="border-style: none">
+                  </td>
+                  <td width="100%" valign="middle">
+                    <a href="https://aclanthology.org/2024.findings-emnlp.836/">
+                      <papertitle> Persuasiveness of Generated Free-Text Rationales in Subjective Decisions: A Case Study on Pairwise Argument Ranking
+                      </papertitle>
+                    </a>
+                    <br>
+                    <b>Mohamed Elaraby</b>, <a href="https://people.cs.pitt.edu/~litman/">Diane Litman</a>, <a href="https://people.cs.pitt.edu/~litman/">Xiang Lorraine Li</a>, <a href="https://people.cs.pitt.edu/~litman/">Ahmed Magooda</a>
+                    <br>
+
+                    <em>Findings of EMNLP</em>, 2024
+                    <br>
+
+                    <!-- <a href="data/PontTusetTPAMI2017.bib">BibTeX</a> / -->
+                    <a href="https://github.com/EngSalem/Free-text-rationale-persuasion">
+                      code and data</a> /
+                    <a href="https://docs.google.com/presentation/d/1W62k2xzcF6LS4k-GQ5EEYy1Umg9Qvjl7beK9utUwF_M/edit?usp=sharing">
+                      slides</a> /
+                    <button class="bibButton" ,="" id="bibButton061523">
+                      <bf>Show BibTeX</bf>
+                    </button>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        var bibButton = document.getElementById("bibButton061523");
+                        var bibliography = document.getElementById("bibliography061523");
+
+                        bibButton.addEventListener("click", function () {
+                          if (bibliography.style.display === "none") {
+                            bibliography.style.display = "block";
+                            bibButton.innerHTML = "<bf>Hide BibTeX</bf>";
+                          } else {
+                            bibliography.style.display = "none";
+                            bibButton.innerHTML = "<bf>Show BibTeX</bf>";
+                          }
+                        });
+                      });
+                    </script>
+
+                    <div id="bibliography061523" style="display: none;">
+
+                      <div class="bib-entry">
+                        <p class="bib-title">@InProceedings{elaraby-etal-2024-persuasiveness,</p>
+                        <p class="bib-info">author = "Elaraby, Mohamed  and
+                          Litman, Diane  and
+                          Li, Xiang Lorraine  and
+                          Magooda, Ahmed",</p>
+                        <p class="bib-info">title = "Persuasiveness of Generated Free-Text Rationales in Subjective Decisions: A Case Study on Pairwise Argument Ranking",</p>
+                        <p class="bib-info">booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",</p>
+                        <p class="bib-info">month = {nov},</p>
+                        <p class="bib-info">year = {2024},</p>
+                        <p class="bib-info">pages = "14311-14329",</p>
+                      </div>
+
+                    </div>
+
+                  </td>
+                </tr>
+
+
+                <tr>
+                  
+                  <!-- humaneval paper -->
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="./salem_files/argument_coverage.png" alt="PontTuset" width="200" style="border-style: none">
+                  </td>
+                  <td width="100%" valign="middle">
+                    <a href="https://aclanthology.org/2024.lrec-main.1207/">
+                      <papertitle> Adding Argumentation into Human Evaluation of Long Document Abstractive Summarization: A Case Study on Legal Opinions
+                      </papertitle>
+                    </a>
+                    <br>
+                    <b>Mohamed Elaraby</b>, <a href="https://scholar.google.com.eg/citations?user=2dM6prwAAAAJ&hl=en">Huihui Xu</a>, <a href="https://scholar.google.com.eg/citations?user=50_PZ4MAAAAJ&hl=en">Morgan Gray</a>, <a href="https://www.lrdc.pitt.edu/people/researcher-detail.cshtml?id=32">Kevin Ashley</a> 
+                    , <a href="https://people.cs.pitt.edu/~litman/">Diane Litman</a>
+          
+                    <em>Proceedings of the Fourth Workshop on Human Evaluation of NLP Systems (HumEval) @ LREC-COLING 2024</em>, 2024
+                    <br>
+                    <a href="https://arxiv.org/abs/2403.19012">arxiv</a> /
+                    <!-- <a href="data/PontTusetTPAMI2017.bib">BibTeX</a> / -->
+                    <a href="https://github.com/EngSalem/ReflectSUMM">
+                      code</a> /
+                    <a href="https://engsalem.github.io//data/reflectsumm-lrec-coling.pdf">
+                      slides</a> /
+                    <a href="https://drive.google.com/file/d/1mE9B-9ppgVXixOvjZsEIFpBVz3ZTwU1G/view?usp=sharing">
+                      video</a> /
+                    <button class="bibButton" ,="" id="bibButton0315">
+                      <bf>Show BibTeX</bf>
+                    </button>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        var bibButton = document.getElementById("bibButton0315");
+                        var bibliography = document.getElementById("bibliography0315");
+
+                        bibButton.addEventListener("click", function () {
+                          if (bibliography.style.display === "none") {
+                            bibliography.style.display = "block";
+                            bibButton.innerHTML = "<bf>Hide BibTeX</bf>";
+                          } else {
+                            bibliography.style.display = "none";
+                            bibButton.innerHTML = "<bf>Show BibTeX</bf>";
+                          }
+                        });
+                      });
+                    </script>
+
+                    <div id="bibliography0315" style="display: none;">
+                      <div class="bib-entry">
+                        <p class="bib-title">@inproceedings{elaraby-etal-2024-adding,</p>
+                        <p class="bib-info">title = "Adding Argumentation into Human Evaluation of Long Document Abstractive Summarization: A Case Study on Legal Opinions",</p>
+                        <p class="bib-info">author = "Elaraby, Mohamed  and
+                          Xu, Huihui  and
+                          Gray, Morgan  and
+                          Ashley, Kevin  and
+                          Litman, Diane",</p>
+                        <p class="bib-info">editor = "Balloccu, Simone  and
+                          Belz, Anya  and
+                          Huidrom, Rudali  and
+                          Reiter, Ehud  and
+                          Sedoc, Joao  and
+                          Thomson, Craig",</p>
+                        <p class="bib-info">booktitle = "Proceedings of the Fourth Workshop on Human Evaluation of NLP Systems (HumEval) @ LREC-COLING 2024",</p>
+                        <p class="bib-info">month = may, year = "2024",</p>
+                        <p class="bib-info">address = "Torino, Italia",</p>
+                        <p class="bib-info">publisher = "ELRA and ICCL",</p>
+                        <p class="bib-info">url = "<a href="https://aclanthology.org/2024.humeval-1.3/">https://aclanthology.org/2024.humeval-1.3/</a>",
+                        </p>
+                        <p class="bib-info">pages = "28--35",</p>
+                        <p class="bib-info">abstract = "Human evaluation remains the gold standard for assessing abstractive summarization. However, current practices often prioritize constructing evaluation guidelines for fluency, coherence, and factual accuracy, overlooking other critical dimensions. In this paper, we investigate argument coverage in abstractive summarization by focusing on long legal opinions, where summaries must effectively encapsulate the document`s argumentative nature. We introduce a set of human-evaluation guidelines to evaluate generated summaries based on argumentative coverage. These guidelines enable us to assess three distinct summarization models, studying the influence of including argument roles in summarization. Furthermore, we utilize these evaluation scores to benchmark automatic summarization metrics against argument coverage, providing insights into the effectiveness of automated evaluation methods."
+                          ",</p>
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+             
+                <tr>
+
+                  <!-- REFLECTSUMM paper -->
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="./salem_files/reflectsumm.jpg" alt="PontTuset" width="200" style="border-style: none">
+                  </td>
+                  <td width="100%" valign="middle">
+                    <a href="https://aclanthology.org/2024.lrec-main.1207/">
+                      <papertitle> ReflectSumm: A Benchmark for Course Reflection Summarization
+                      </papertitle>
+                    </a>
+                    <br>
+                    <b>Yang Zhong*</b>, <a href="https://engsalem.github.io/">Mohamed
+                      Elaraby*</a>, <a href="https://people.cs.pitt.edu/~litman/">Diane Litman</a>, <a href="https://scholar.google.com/citations?user=ZKSN8A4AAAAJ&amp;hl=en">
+                      Ahmed Ashraf Butt</a>, <a href="http://www.muhsin.me/?_ga=2.29551359.1343014307.1711922144-1174339260.1709791414">
+                      Muhsin Menekse</a>
+
+                    <br>
+                    <strong>* indicates
+                      equal contribution</strong>
+                    <br>
+                    <em>The 2024 Joint International Conference on Computational Linguistics, Language Resources and
+                      Evaluation (LREC-COLING 2024)</em>, 2024
+                    <br>
+                    <a href="https://arxiv.org/abs/2403.19012">arxiv</a> /
+                    <!-- <a href="data/PontTusetTPAMI2017.bib">BibTeX</a> / -->
+                    <a href="https://github.com/EngSalem/ReflectSUMM">
+                      code</a> /
+                    <a href="https://engsalem.github.io//data/reflectsumm-lrec-coling.pdf">
+                      slides</a> /
+                    <a href="https://drive.google.com/file/d/1mE9B-9ppgVXixOvjZsEIFpBVz3ZTwU1G/view?usp=sharing">
+                      video</a> /
+                    <button class="bibButton" ,="" id="bibButton0315">
+                      <bf>Show BibTeX</bf>
+                    </button>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        var bibButton = document.getElementById("bibButton0315");
+                        var bibliography = document.getElementById("bibliography0315");
+
+                        bibButton.addEventListener("click", function () {
+                          if (bibliography.style.display === "none") {
+                            bibliography.style.display = "block";
+                            bibButton.innerHTML = "<bf>Hide BibTeX</bf>";
+                          } else {
+                            bibliography.style.display = "none";
+                            bibButton.innerHTML = "<bf>Show BibTeX</bf>";
+                          }
+                        });
+                      });
+                    </script>
+
+                    <div id="bibliography0315" style="display: none;">
+                      <div class="bib-entry">
+                        <p class="bib-title">@inproceedings{elaraby-etal-2024-reflectsumm,</p>
+                        <p class="bib-info">title = "ReflectSumm: A Benchmark for Course Reflection Summarization",</p>
+                        <p class="bib-info">author = "Zhong, Yang and Elaraby, Mohamed and Litman, Diane and Butt, Ahmed
+                          Ashraf and Menekse, Muhsin",</p>
+                        <p class="bib-info">editor = "Calzolari, Nicoletta and Kan, Min-Yen and Hoste, Veronique and
+                          Lenci, Alessandro and Sakti, Sakriani and Xue, Nianwen",</p>
+                        <p class="bib-info">booktitle = "Proceedings of the 2024 Joint International Conference on
+                          Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",</p>
+                        <p class="bib-info">month = may, year = "2024",</p>
+                        <p class="bib-info">address = "Torino, Italia",</p>
+                        <p class="bib-info">publisher = "ELRA and ICCL",</p>
+                        <p class="bib-info">url = "<a href="https://aclanthology.org/2024.lrec-main.1207">https://aclanthology.org/2024.lrec-main.1207</a>",
+                        </p>
+                        <p class="bib-info">pages = "13819--13846",</p>
+                        <p class="bib-info">abstract = "This paper introduces ReflectSumm, a novel summarization dataset
+                          specifically designed for summarizing students' reflective writing. The goal of ReflectSumm is
+                          to facilitate developing and evaluating novel summarization techniques tailored to real-world
+                          scenarios with little training data, with potential implications in the opinion summarization
+                          domain in general and the educational domain in particular. The dataset encompasses a diverse
+                          range of summarization tasks and includes comprehensive metadata, enabling the exploration of
+                          various research questions and supporting different applications. To showcase its utility, we
+                          conducted extensive evaluations using multiple state-of-the-art baselines. The results provide
+                          benchmarks for facilitating further research in this area.",</p>
+                      </div>
+                    </div>
+
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="./salem_files/imageArg.jpg" alt="PontTuset" width="200" style="border-style: none">
+                  </td>
+                  <td width="100%" valign="middle">
+                    <a href="https://aclanthology.org/2023.argmining-1.12/">
+                      <papertitle> Overview of ImageArg-2023: The First Shared Task in Multimodal Argument Mining
+                      </papertitle>
+                    </a>
+                    <br>
+                    <a href="https://people.cs.pitt.edu/~zhexiong/">Zhexiong Liu</a>, <a href="https://engsalem.github.io/">Mohamed Elaraby*</a>, <strong>Yang Zhong*</strong>, <a href="https://people.cs.pitt.edu/~litman/">
+                      Diane Litman</a>
+                    <br>
+                    <strong>* indicates
+                      equal contribution</strong>
+                    <br>
+                    <em>The 10th Argument Mining Workshop in EMNLP</em>, 2023
+                    <br>
+                    <a href="https://arxiv.org/abs/2310.12172">arxiv</a> /
+                    <!-- <a href="data/PontTusetTPAMI2017.bib">BibTeX</a> / -->
+                    <a href="https://imagearg.github.io/">
+                      code</a> /
+                    <button class="bibButton" ,="" id="bibButton0224">
+                      <bf>Show BibTeX</bf>
+                    </button>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        var bibButton = document.getElementById("bibButton0224");
+                        var bibliography = document.getElementById("bibliography0224");
+
+                        bibButton.addEventListener("click", function () {
+                          if (bibliography.style.display === "none") {
+                            bibliography.style.display = "block";
+                            bibButton.innerHTML = "<bf>Hide BibTeX</bf>";
+                          } else {
+                            bibliography.style.display = "none";
+                            bibButton.innerHTML = "<bf>Show BibTeX</bf>";
+                          }
+                        });
+                      });
+                    </script>
+
+                    <div id="bibliography0224" style="display: none;">
+                      <div class="bib-entry">
+                        <p class="bib-title">@inproceedings{liu-etal-2023-overview,</p>
+                        <p class="bib-info">title = "Overview of {I}mage{A}rg-2023: The First Shared Task in Multimodal
+                          Argument Mining",</p>
+                        <p class="bib-info">author = "Liu, Zhexiong and Elaraby, Mohamed and Zhong, Yang and Litman,
+                          Diane",</p>
+                        <p class="bib-info">editor = "Alshomary, Milad and Chen, Chung-Chi and Muresan, Smaranda and
+                          Park, Joonsuk and Romberg, Julia",</p>
+                        <p class="bib-info">booktitle = "Proceedings of the 10th Workshop on Argument Mining",</p>
+                        <p class="bib-info">month = dec, year = "2023",</p>
+                        <p class="bib-info">address = "Singapore",</p>
+                        <p class="bib-info">publisher = "Association for Computational Linguistics",</p>
+                        <p class="bib-info">url = "<a href="https://aclanthology.org/2023.argmining-1.12">https://aclanthology.org/2023.argmining-1.12</a>",
+                        </p>
+                        <p class="bib-info">doi = "10.18653/v1/2023.argmining-1.12",</p>
+                        <p class="bib-info">pages = "120--132",</p>
+                        <p class="bib-info">abstract = "This paper presents an overview of the ImageArg shared task, the
+                          first multimodal Argument Mining shared task co-located with the 10th Workshop on Argument
+                          Mining at EMNLP 2023. The shared task comprises two classification subtasks - (1) Subtask-A:
+                          Argument Stance Classification; (2) Subtask-B: Image Persuasiveness Classification. The former
+                          determines the stance of a tweet containing an image and a piece of text toward a
+                          controversial topic (e.g., gun control and abortion). The latter determines whether the image
+                          makes the tweet text more persuasive. The shared task received 31 submissions for Subtask-A
+                          and 21 submissions for Subtask-B from 9 different teams across 6 countries. The top submission
+                          in Subtask-A achieved an F1-score of 0.8647 while the best submission in Subtask-B achieved an
+                          F1-score of 0.5561.", </p>
+                  </div></div></td>
+                </tr>
+
+
+               
+
+                <tr onmouseout="nerfsuper_stop()" onmouseover="nerfsuper_start()">
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="./salem_files/acl2023_argument.jpg" alt="PontTuset" width="200">
+                  </td>
+                  <td width="100%" valign="middle">
+                    <a href="https://aclanthology.org/2023.findings-acl.481/">
+                      <papertitle>Towards Argument-Aware Abstractive Summarization of Long Legal Opinions with Summary
+                        Reranking
+                      </papertitle>
+                    </a>
+                    <br>
+                    <strong href="https://engsalem.github.io/">Mohamed Elaraby</strong>, <a href="yangzhongcs.com">Yang Zhong
+                    </a>,
+                    <a href="https://people.cs.pitt.edu/~litman/">Diane Litman</a>
+                    <br>
+                    <em>Findings of ACL</em>, 2023
+                    <br>
+
+                    <!-- <a href="http://yenchenlin.me/nerf-supervision/">project page</a> / -->
+                    <a href="https://arxiv.org/pdf/2306.00672.pdf">arxiv</a> /
+                    <!-- <a href="https://www.youtube.com/watch?v=_zN-wVwPH1s">video</a> / -->
+                    <a href="https://github.com/EngSalem/legalSummReranking">code</a> / <a href="https://engsalem.github.io//data/acl2023_reranking_poster.pdf">poster</a>
+                    /
+                    <button class="bibButton" ,="" id="bibButton1">
+                      <bf>Show BibTeX</bf>
+                    </button>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        var bibButton = document.getElementById("bibButton1");
+                        var bibliography = document.getElementById("bibliography");
+
+                        bibButton.addEventListener("click", function () {
+                          if (bibliography.style.display === "none") {
+                            bibliography.style.display = "block";
+                            bibButton.innerHTML = "<bf>Hide BibTeX</bf>";
+                          } else {
+                            bibliography.style.display = "none";
+                            bibButton.innerHTML = "<bf>Show BibTeX</bf>";
+                          }
+                        });
+                      });
+                    </script>
+                    <div id="bibliography" style="display: none;">
+
+                      <div class="bib-entry">
+                        <p class="bib-title">@inproceedings{elaraby-etal-2023-towards,</p>
+                        <p class="bib-info">title = "Towards Argument-Aware Abstractive Summarization of Long Legal
+                          Opinions with Summary Reranking",</p>
+                        <p class="bib-info">author = "Elaraby, Mohamed and Zhong, Yang and Litman, Diane",</p>
+                        <p class="bib-info">booktitle = "Findings of the Association for Computational Linguistics: ACL
+                          2023",</p>
+                        <p class="bib-info">month = jul, year = "2023", address = "Toronto, Canada",</p>
+                        <p class="bib-info">publisher = "Association for Computational Linguistics",</p>
+                        <p class="bib-info">url = "<a href="https://aclanthology.org/2023.findings-acl.481">https://aclanthology.org/2023.findings-acl.481</a>",
+                        </p>
+                        <p class="bib-info">doi = "10.18653/v1/2023.findings-acl.481",</p>
+                        <p class="bib-info">pages = "7601--7612",</p>
+                        <p class="bib-info">abstract = "We propose a simple approach for the abstractive summarization
+                          of
+                          long legal opinions that takes into account the argument structure of the document. Legal
+                          opinions often contain complex and nuanced argumentation, making it challenging to generate a
+                          concise summary that accurately captures the main points of the legal opinion. Our approach
+                          involves using argument role information to generate multiple candidate summaries, then
+                          reranking these candidates based on alignment with the document{'}s argument structure. We
+                          demonstrate the effectiveness of our approach on a dataset of long legal opinions and show
+                          that
+                          it outperforms several strong baselines.",</p>
+                        <p class="bib-info">}</p>
+                      </div>
+
+
+                      
+                    </div>
+
+                    <p></p>
+                    <!-- <p>NeRF works better than RGB-D cameras or multi-view stereo when learning object descriptors.</p> -->
+                  </td>
+                </tr>
+
+
+
+               
+
+
+                <tr>
+                  <td style="padding:20px;width:25%;vertical-align:middle">
+                    <img src="./salem_files/arglegal_summ.png" alt="PontTuset" width="200" style="border-style: none">
+                  </td>
+                  <td width="100%" valign="middle">
+                    <a href="https://aclanthology.org/2022.coling-1.540/">
+                      <papertitle>ArgLegalSumm: Improving Abstractive Summarization of Legal Documents with Argument Mining
+                      </papertitle>
+                    </a>
+                    <br>
+                    <strong href="https://engsalem.github.io/">Mohamed Elaraby</strong>, <a href="https://people.cs.pitt.edu/~litman/">Diane Litman</a>
+                 
+                    <em>COLING</em>, 2022
+                    <br>
+                    <a href="https://arxiv.org/abs/2209.01650">arxiv</a> /
+                    <!-- <a href="data/PontTusetTPAMI2017.bib">BibTeX</a> / -->
+                    <a href="https://github.com/EngSalem/arglegalsumm">
+                      code</a>  /
+                    <button class="bibButton" ,="" id="bibButton3">
+                      <bf>Show BibTeX</bf>
+                    </button>
+                    <script>
+                      document.addEventListener("DOMContentLoaded", function () {
+                        var bibButton = document.getElementById("bibButton3");
+                        var bibliography = document.getElementById("bibliography3");
+
+                        bibButton.addEventListener("click", function () {
+                          if (bibliography.style.display === "none") {
+                            bibliography.style.display = "block";
+                            bibButton.innerHTML = "<bf>Hide BibTeX</bf>";
+                          } else {
+                            bibliography.style.display = "none";
+                            bibButton.innerHTML = "<bf>Show BibTeX</bf>";
+                          }
+                        });
+                      });
+                    </script>
+                    <div id="bibliography3" style="display: none;">
+                      <div class="bib-entry">
+                        <p class="bib-title">@inproceedings{elaraby-litman-2022-arglegalsumm,</p>
+                        <p class="bib-info">title = "{A}rg{L}egal{S}umm: Improving Abstractive Summarization of Legal Documents with Argument Mining",</p>
+                        <p class="bib-info">author = "Elaraby, Mohamed  and
+                          Litman, Diane",</p>
+                        <p class="bib-info">booktitle = "Proceedings of the 29th International Conference on Computational Linguistics",</p>
+                        <p class="bib-info">month = may, year = "2022",</p>
+                        <p class="bib-info">address = "Gyeongju, Republic of Korea",</p>
+                        <p class="bib-info">publisher = "Association for Computational Linguistics",</p>
+                        <p class="bib-info">url = "<a href="https://aclanthology.org/2022.coling-1.540/">https://aclanthology.org/2022.coling-1.540</a>",
+                        </p>
+                        <p class="bib-info">pages = "6187--6194",</p>
+                        <p class="bib-info">abstract = "A challenging task when generating summaries of legal documents is the ability to address their argumentative nature. We introduce a simple technique to capture the argumentative structure of legal documents by integrating argument role labeling into the summarization process. Experiments with pretrained language models show that our proposed approach improves performance over strong baselines.",</p>
+                        <p class="bib-info">}</p>
+                      </div>
+
+
+
+                      
+                    </div>
+                    <p></p>
+                    <!-- <p>We produce state-of-the-art contours, regions and object candidates, and we compute normalized-cuts
+                    eigenvectors 20&times faster.</p>
+                  <p>This paper subsumes our CVPR 2014 paper.</p> -->
+                  </td>
+                </tr>
+
+ 
+                
+          
+          
+        
+      
+    </tbody>
+  </table>
+  </div>
+
+  <div id="Service" class="section">
+    <heading>Service</heading>
+    <ul>
+          <li>Reviewer: ACL ARR (2023-now), LREC 2020, ARGMINING 2023</li>
+          <li>Mentorship: For struggling graduate students in the middle east, specially the ones who need help with their thesis, contact me with subject title [research discussion] with a concise description of your research and what type of help you request</li>
+        </ul><table>
+      <tbody><tr>
+        
+      </tr>
+
+      
+    </tbody></table>
+  </div>
+ 
+  <div id="Contact" class="section">
+    <heading>Contact</heading>
+    <table width="100%" align="center" border="0" cellpadding="20">
+      <tbody>
+
+        <tr>
+          <!-- <td style="padding:0px;width:25%;"></td> -->
+          <td width="100%" valign="left">
+            <ul>
+              <li>Mohamed Elaraby</li>
+              <li>Email: <a href="https://engsalem.github.io//">mse30 AT pitt.edu</a> </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+
+  <hr>
+  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr>
+        <td style="padding:0px">
+          <br>
+          <p style="text-align:center;font-size:small;">
+            Based on this website's <a href="https://github.com/jonbarron/jonbarron_website">source
+              code</a>.
+            <a href="https://mapmyvisitors.com/web/1bvf0" title="Visit tracker"><img src="./salem_files/map.png"></a>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </td>
+  </tr>
+  </tbody></table>
+
+
+<div id="loom-companion-mv3" ext-id="liecbddmkiiihnedobmlmillhodjkdmb"><section id="shadow-host-companion"></section></div></body></html>

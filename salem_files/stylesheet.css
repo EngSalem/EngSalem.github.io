@@ -1,0 +1,174 @@
+/* Font settings using Lato */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+}
+
+body {
+  font-family: 'Lato', Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f09228;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 1.5em;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.heading {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.papertitle {
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Navbar styling */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 0;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav ul li {
+  margin: 0 15px;
+  text-align: center;
+}
+
+.nav ul li a {
+  color: #333;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #0056b3;
+  border-bottom: 2px solid #0056b3;
+}
+
+/* Sections */
+.section {
+  padding: 40px;
+  margin-top: 60px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* News and Publications styling */
+.news, .publications {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.news ul, .publications ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.news ul li, .publications ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.news ul li:last-child, .publications ul li:last-child {
+  border-bottom: none;
+}
+
+/* Buttons */
+.bibButton {
+  background-color: #0056b3;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bibButton:hover {
+  background-color: #004494;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+footer a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
