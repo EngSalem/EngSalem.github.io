@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Assisted Reviews Should Be Argumentative — Mohamed S. Elaraby</title>
+  <meta name="description" content="A case for review assistants that evaluate the human reviewer's reasoning by decomposing reviews into argument roles and returning role-specific feedback." />
+  <meta name="author" content="Mohamed Salem Elaraby" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🌐</text></svg>">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #222;
+      --muted: #5b6475;
+      --link: #2b6cb0;
+      --link-hover: #1e4e82;
+      --border: #e5e7eb;
+      --panel: #f7f8fb;
+      --accent: #f59e0b;
+      --radius: 12px;
+      --shadow: 0 8px 20px rgba(0,0,0,.06);
+      /* diagram palette */
+      --teal: #0F6E56; --teal-bg: #e7f4ef;
+      --red: #A32D2D;  --red-bg: #fbeaea;
+      --blue: #2b6cb0; --blue-bg: #eaf1fa;
+      --amber: #b45309; --amber-bg: #fff7ed;
+      --coral: #b83280; --coral-bg: #fdeef6;
+      --purple: #6b46c1; --purple-bg: #f1ecfb;
+      --gray: #5b6475;  --gray-bg: #f1f3f6;
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover, a:focus { color: var(--link-hover); text-decoration: underline; }
+
+    .wrap { max-width: 760px; margin: 0 auto; padding: 24px; }
+
+    /* Top bar */
+    .topbar { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 20px; border-bottom: 1px solid var(--border); margin-bottom: 30px; }
+    .topbar .back { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; }
+    .chip { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid var(--border); background: #fff; border-radius: 999px; font-weight: 600; font-size: 13px; color: var(--text); }
+    .chip:hover { border-color: var(--link); color: var(--link); text-decoration: none; }
+
+    /* Article header */
+    .post-header { margin-bottom: 28px; }
+    .post-header .kicker { color: var(--accent); font-weight: 800; letter-spacing: .04em; text-transform: uppercase; font-size: 13px; margin-bottom: 10px; }
+    .post-header h1 { font-family: 'Merriweather', Georgia, serif; font-weight: 700; font-size: 34px; line-height: 1.22; margin: 0 0 14px; }
+    .post-header .sub { color: var(--muted); font-size: 18px; font-style: italic; margin: 0 0 16px; }
+    .post-header .meta { color: var(--muted); font-size: 14px; font-weight: 600; display: flex; flex-wrap: wrap; gap: 14px; }
+
+    /* Article body */
+    article { font-size: 17px; line-height: 1.72; color: #2a2f3a; }
+    article h2 { font-family: 'Merriweather', Georgia, serif; font-weight: 700; font-size: 25px; margin: 40px 0 12px; line-height: 1.3; }
+    article h3 { font-weight: 700; font-size: 19px; margin: 30px 0 8px; color: #1f2430; }
+    article p { margin: 0 0 18px; }
+    article strong { color: #1a1f29; }
+    article ul, article ol { margin: 0 0 18px; padding-left: 22px; }
+    article li { margin-bottom: 8px; }
+
+    .lead-para { font-size: 19px; color: #374151; }
+
+    /* Pull quote / thesis box */
+    .thesis { background: var(--panel); border-left: 4px solid var(--accent); border-radius: 0 10px 10px 0; padding: 18px 22px; margin: 26px 0; font-size: 18px; }
+    .thesis strong { color: #7c4a03; }
+
+    /* Figures */
+    figure { margin: 30px 0; padding: 0; }
+    figure .frame { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px; }
+    figure svg { width: 100%; height: auto; display: block; }
+    figcaption { color: var(--muted); font-size: 14px; text-align: center; margin-top: 10px; font-style: italic; }
+
+    /* diagram helpers */
+    .th { font: 700 13px 'Inter', sans-serif; fill: #1f2430; }
+    .ts { font: 500 11px 'Inter', sans-serif; fill: var(--muted); }
+    .c-teal rect { fill: var(--teal-bg); stroke: var(--teal); }
+    .c-red rect { fill: var(--red-bg); stroke: var(--red); }
+    .c-blue rect { fill: var(--blue-bg); stroke: var(--blue); }
+    .c-amber rect { fill: var(--amber-bg); stroke: var(--amber); }
+    .c-coral rect { fill: var(--coral-bg); stroke: var(--coral); }
+    .c-purple rect { fill: var(--purple-bg); stroke: var(--purple); }
+    .c-gray rect { fill: var(--gray-bg); stroke: var(--gray); }
+    .arr { stroke: var(--muted); stroke-width: 1.6; fill: none; }
+
+    /* Table */
+    .tbl-scroll { overflow-x: auto; margin: 24px 0; }
+    table { border-collapse: collapse; width: 100%; font-size: 14.5px; }
+    th, td { text-align: left; padding: 11px 13px; border: 1px solid var(--border); vertical-align: top; }
+    th { background: var(--panel); font-weight: 700; }
+    .role-fact { color: var(--blue); font-weight: 700; }
+    .role-eval { color: var(--amber); font-weight: 700; }
+    .role-req { color: var(--coral); font-weight: 700; }
+
+    /* Callout for bottlenecks */
+    .callout { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 18px 22px; margin: 20px 0; }
+    .callout h3 { margin-top: 0; }
+
+    /* References */
+    .refs { margin-top: 20px; }
+    .refs li { font-size: 14.5px; color: #374151; margin-bottom: 12px; line-height: 1.55; }
+
+    hr.sep { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    footer { color: var(--muted); font-size: 14px; text-align: center; margin: 30px 0; }
+
+    .endnote { background: var(--panel); border: 1px dashed var(--border); border-radius: 10px; padding: 14px 18px; font-size: 14.5px; color: var(--muted); margin-top: 26px; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <a class="back" href="../blog.html"><i class="fa-solid fa-arrow-left"></i> All posts</a>
+      <a class="chip" href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+    </div>
+
+    <header class="post-header">
+      <div class="kicker">Position</div>
+      <h1>AI-Assisted Reviews Should Be Argumentative</h1>
+      <p class="sub">A case for building review assistants that evaluate the human's reasoning, rather than replacing it.</p>
+      <div class="meta">
+        <span><i class="fa-regular fa-calendar"></i> July 2026</span>
+        <span><i class="fa-regular fa-user"></i> Mohamed S. Elaraby</span>
+        <span><i class="fa-regular fa-clock"></i> ~9 min read</span>
+      </div>
+    </header>
+
+    <article>
+      <h2>The temptation, and why it's the wrong default</h2>
+      <p class="lead-para"> As submission volumes surge, reviewer pools have become harder to expand, and the share of reviews showing signs of LLM authorship continues to rise. Faced with this, conferences are increasingly reaching for the obvious solution: let the model write the review. </p>
+      <p> For computer scientists, automation is an especially tempting response. But I would argue it is <strong>the wrong default</strong>—not because today’s tools are too weak (they will improve), but because <em>automating the act of reviewing undermines the very thing peer review is quietly for.</em> </p>
+      <p> Peer review is not just a quality filter for papers. It is one of the few structured apprenticeships scientists get in <strong>judgment</strong>: reading a claim carefully, locating the evidence behind it, and deciding whether that evidence actually supports the conclusion. When we automate the review itself, we may save reviewer-hours, but we also stop <em>training reviewers</em>. In a world where AI-generated scientific output may vastly outpace what humans can produce, the human capacity to evaluate—to assess design, novelty, reasoning, and impact—becomes <em>more</em> valuable, not less. Handing that skill over to a model optimizes away the one competency we can least afford to lose. </p>
+      <p> There is also a second, subtler failure. When a model hands a reviewer a ready-made draft, the reviewer is likely to <em>anchor</em> to it. A large randomized study of an LLM feedback tool at <span>ICLR</span> found that a substantial fraction of reviewers who received AI feedback later revised their reviews. That can sometimes be helpful—but it also means the model is steering the discourse rather than merely supporting it. Scale that dynamic up, and you get what recent work has called a <strong>hivemind effect</strong>: AI-generated reviews begin to converge on one another, feedback diversity collapses, and—because gaming a predictable reviewer is easy—the ecosystem drifts toward an <em>intellectual monoculture</em> in which papers are optimized to satisfy the model rather than to be correct. </p>
+      <p> So the danger is not simply that AI-written reviews might be wrong. It is that they are <em>fluent, generic, and contagious</em>—and in the process, they quietly relocate the responsibility for judgment away from the scientist. </p>
+      
+      <h2>The automation reframe : evaluate the reasoning, don't produce it</h2>
+      <p>Here is the move I am proposing.</p>
+      <div class="thesis">
+        An AI review assistant <em>should not be a reviewer</em>. It should be an <strong>agentic evaluator of the human's review</strong> — treating that review as an argumentative summary of the scientific discourse, decomposing it into its argument roles, and giving <strong>role-specific feedback</strong>.
+      </div>
+      <p>This keeps the scientist firmly behind the driving wheel of reviewing. The scientist still does the reviewing — still forms the claims, still decides what matters. The assistant's job is narrower and more honest: <em>did you make the argument you think you made, and does it hold up?</em></p>
+      <p>The two designs pull in opposite directions. A draft-writing assistant <em>anchors</em> the reviewer to the model's text; a role-checking assistant <em>pushes the reviewer back to the paper</em>.</p>
+
+      <figure>
+        <div class="frame">
+          <svg viewBox="0 0 680 400" role="img" aria-label="Two AI review designs compared">
+            <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <text class="th" x="180" y="24" text-anchor="middle">Draft-writing assistant</text>
+            <text class="ts" x="180" y="42" text-anchor="middle">judgment drifts to the model</text>
+            <g class="c-red"><rect x="60" y="60" width="240" height="48" rx="8"/><text class="th" x="180" y="80" text-anchor="middle">AI writes the review</text><text class="ts" x="180" y="97" text-anchor="middle">fluent, generic draft</text></g>
+            <line x1="180" y1="108" x2="180" y2="146" class="arr" marker-end="url(#ar)" stroke="#A32D2D"/><text class="ts" x="228" y="131" text-anchor="middle">anchors</text>
+            <g class="c-gray"><rect x="60" y="148" width="240" height="48" rx="8"/><text class="th" x="180" y="168" text-anchor="middle">Reviewer edits toward it</text><text class="ts" x="180" y="185" text-anchor="middle">less own reasoning</text></g>
+            <line x1="180" y1="196" x2="180" y2="234" class="arr" marker-end="url(#ar)" stroke="#A32D2D"/>
+            <g class="c-red"><rect x="60" y="236" width="240" height="48" rx="8"/><text class="th" x="180" y="256" text-anchor="middle">Feedback homogenizes</text><text class="ts" x="180" y="273" text-anchor="middle">hivemind, monoculture</text></g>
+            <line x1="330" y1="180" x2="352" y2="180" stroke="#c9ced6" stroke-width="1" stroke-dasharray="4 4"/>
+            <text class="th" x="500" y="24" text-anchor="middle">Role-checking assistant</text>
+            <text class="ts" x="500" y="42" text-anchor="middle">judgment stays with the human</text>
+            <g class="c-gray"><rect x="380" y="60" width="240" height="48" rx="8"/><text class="th" x="500" y="80" text-anchor="middle">Human writes the review</text><text class="ts" x="500" y="97" text-anchor="middle">forms the claims</text></g>
+            <line x1="500" y1="108" x2="500" y2="146" class="arr" marker-end="url(#ar)" stroke="#0F6E56"/><text class="ts" x="548" y="131" text-anchor="middle">checks</text>
+            <g class="c-teal"><rect x="380" y="148" width="240" height="48" rx="8"/><text class="th" x="500" y="168" text-anchor="middle">AI checks it by role</text><text class="ts" x="500" y="185" text-anchor="middle">facts · evals · requests</text></g>
+            <line x1="500" y1="196" x2="500" y2="234" class="arr" marker-end="url(#ar)" stroke="#0F6E56"/><text class="ts" x="556" y="219" text-anchor="middle">pushes back</text>
+            <g class="c-teal"><rect x="380" y="236" width="240" height="48" rx="8"/><text class="th" x="500" y="256" text-anchor="middle">Reviewer rechecks paper</text><text class="ts" x="500" y="273" text-anchor="middle">revises or holds firm</text></g>
+            <line x1="500" y1="284" x2="500" y2="322" class="arr" marker-end="url(#ar)" stroke="#0F6E56"/>
+            <g class="c-teal"><rect x="380" y="324" width="240" height="44" rx="8" stroke-width="1.5"/><text class="th" x="500" y="350" text-anchor="middle">Sharper human judgment</text></g>
+          </svg>
+        </div>
+        <figcaption>Two designs for an AI review assistant. Writing the review anchors the human to the model; checking the review by role sends the human back to the paper.</figcaption>
+      </figure>
+
+     <h2>The reframe rests on two hypotheses</h2>
+
+     <p><strong>First: scientific writing is argumentative in structure, and so are reviews.</strong> A scientific paper is not a flat list of facts. It is a web of background claims, evidence, and the authors’ own contributions, tied together by relations of support and opposition. Argument mining—the subfield devoted to recovering this structure automatically—has spent the past decade learning to identify these roles. Much of my own work in summarization and coverage analysis builds on exactly this premise (e.g., <a href="../index.html#publications">ArgLegalSumm</a>, <a href="https://arxiv.org/abs/2505.23654" target="_blank" rel="noreferrer">ARC</a>).</p>
+
+     <p><strong>Second: a review has its own distinct argumentative structure.</strong> The foundational study here—Hua et al., “Argument Mining for Understanding Peer Reviews” (NAACL 2019)—annotated more than ten thousand propositions in peer reviews into a small set of discourse roles. At a high level, a review is built from three core components:</p>
+
+     <ul>
+     <li><span class="role-fact">Facts</span> — statements describing what the paper claims, proposes, or does.</li>
+     <li><span class="role-eval">Evaluations</span> — the reviewer’s critiques, assessments, and qualitative judgments of those facts.</li>
+     <li><span class="role-req">Requests</span> — suggestions, questions, or demands for improvement.</li>
+    </ul>
+    <p>Put the two together, and the design almost writes itself. If both the paper and the review can be decomposed into argumentative roles, then an assistant can <em>check a review against the paper, role by role</em>—a much more tractable and intellectually honest task than asking it to “write a good review.”</p>
+    
+    <h2>The key idea: the role types the feedback</h2>
+      <p>The contribution I care about is not "generate evidence-based feedback" and not "rewrite the review." It is this: <strong>the argument role of a span determines which kind of feedback is even applicable to it.</strong> The role acts like a type system for feedback — it rules out the checks that don't apply and routes each span to the one that does.</p>
+      <p>You don't run a constructiveness check on a Fact — a Fact is supposed to be <em>true</em>, not constructive. You don't run a fidelity-to-the-paper check on a Request — a Request isn't a claim about the paper, it's a proposed action, so the right question is whether it is redundant or out of scope. Each role admits a different, predicated check:</p>
+
+      <figure>
+        <div class="frame">
+          <svg viewBox="0 0 680 430" role="img" aria-label="Argument-grounded review evaluation pipeline">
+            <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+            <g class="c-gray"><rect x="240" y="16" width="200" height="46" rx="8"/><text class="th" x="340" y="35" text-anchor="middle">Human-written review</text><text class="ts" x="340" y="52" text-anchor="middle">argumentative summary</text></g>
+            <line x1="340" y1="62" x2="340" y2="94" class="arr" marker-end="url(#ar2)"/>
+            <g class="c-purple"><rect x="230" y="96" width="220" height="46" rx="8"/><text class="th" x="340" y="115" text-anchor="middle">Argument-role classifier</text><text class="ts" x="340" y="132" text-anchor="middle">segments into roles</text></g>
+            <line x1="300" y1="142" x2="150" y2="188" class="arr" marker-end="url(#ar2)"/>
+            <line x1="340" y1="142" x2="340" y2="188" class="arr" marker-end="url(#ar2)"/>
+            <line x1="380" y1="142" x2="530" y2="188" class="arr" marker-end="url(#ar2)"/>
+            <g class="c-blue"><rect x="40" y="190" width="180" height="48" rx="8"/><text class="th" x="130" y="210" text-anchor="middle">Facts</text><text class="ts" x="130" y="227" text-anchor="middle">what the paper claims</text></g>
+            <g class="c-amber"><rect x="250" y="190" width="180" height="48" rx="8"/><text class="th" x="340" y="210" text-anchor="middle">Evaluations</text><text class="ts" x="340" y="227" text-anchor="middle">critiques, judgments</text></g>
+            <g class="c-coral"><rect x="460" y="190" width="180" height="48" rx="8"/><text class="th" x="550" y="210" text-anchor="middle">Requests</text><text class="ts" x="550" y="227" text-anchor="middle">suggested changes</text></g>
+            <line x1="130" y1="238" x2="130" y2="278" class="arr" marker-end="url(#ar2)"/>
+            <line x1="340" y1="238" x2="340" y2="278" class="arr" marker-end="url(#ar2)"/>
+            <line x1="550" y1="238" x2="550" y2="278" class="arr" marker-end="url(#ar2)"/>
+            <g class="c-blue"><rect x="40" y="280" width="180" height="54" rx="8"/><text class="th" x="130" y="301" text-anchor="middle">Verify vs. paper</text><text class="ts" x="130" y="318" text-anchor="middle">is the claim supported?</text></g>
+            <g class="c-amber"><rect x="250" y="280" width="180" height="54" rx="8"/><text class="th" x="340" y="301" text-anchor="middle">Check validity</text><text class="ts" x="340" y="318" text-anchor="middle">grounded or vague?</text></g>
+            <g class="c-coral"><rect x="460" y="280" width="180" height="54" rx="8"/><text class="th" x="550" y="301" text-anchor="middle">Check necessity</text><text class="ts" x="550" y="318" text-anchor="middle">already answered?</text></g>
+            <line x1="130" y1="334" x2="300" y2="372" class="arr" marker-end="url(#ar2)"/>
+            <line x1="340" y1="334" x2="340" y2="372" class="arr" marker-end="url(#ar2)"/>
+            <line x1="550" y1="334" x2="380" y2="372" class="arr" marker-end="url(#ar2)"/>
+            <g class="c-teal"><rect x="220" y="374" width="240" height="46" rx="8" stroke-width="1.5"/><text class="th" x="340" y="394" text-anchor="middle">Per-span score + explanation</text><text class="ts" x="340" y="411" text-anchor="middle">returned to the reviewer</text></g>
+          </svg>
+        </div>
+        <figcaption>The role classifier is the trigger. Each argument role routes to a predicated check, and every span returns a score plus a natural-language explanation.</figcaption>
+      </figure>
+
+      <p>Two properties distinguish this from scoring a review against a global rubric. First, the unit is the <strong>span</strong>, not the whole review: the same review can hold a well-grounded evaluation beside a hallucinated fact beside a redundant request, and a document-level score flattens exactly the distinctions a reviewer needs. Second, the check is <strong>selected by the role</strong>, not applied uniformly — the role decides which single question is worth asking of each span.</p>
+
+      <h2>What argumentative discourse actually looks like</h2>
+      <p>Here is a realistic review snippet, decomposed and checked span by span. Notice that none of these checks requires the assistant to have an opinion about the <em>paper</em> — only about the <em>review</em>.</p>
+      <p style="background:var(--panel); border-radius:10px; padding:16px 18px; font-style:italic; color:#374151;">"The paper introduces a contrastive pre-training objective and reports a 4-point F1 gain over the BERT baseline on GLUE. The gains are impressive and clearly demonstrate the method's superiority. However, the authors should evaluate on low-resource languages, and they never report variance across seeds."</p>
+
+      <div class="tbl-scroll">
+      <table>
+        <thead><tr><th>Review span</th><th>Role</th><th>Predicated check → feedback</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>"introduces a contrastive pre-training objective and reports a 4-point F1 gain over the BERT baseline on GLUE"</td>
+            <td class="role-fact">Fact</td>
+            <td><strong>Verified (0.9).</strong> The gain and baseline appear in Table 2. Caveat: reported on 6 of 8 GLUE tasks — consider qualifying "on GLUE."</td>
+          </tr>
+          <tr>
+            <td>"The gains are impressive and clearly demonstrate the method's superiority"</td>
+            <td class="role-eval">Evaluation</td>
+            <td><strong>Weakly grounded (0.3).</strong> Asserted, not argued. "Superiority" rests on a 4-point gain with no significance test. Tie the judgment to specific evidence, or soften it.</td>
+          </tr>
+          <tr>
+            <td>"the authors should evaluate on low-resource languages"</td>
+            <td class="role-req">Request</td>
+            <td><strong>Valid, out of scope (0.6).</strong> Not addressed, so not redundant — but the paper's stated scope is English GLUE. Flag whether this is fair or a new-paper-sized ask.</td>
+          </tr>
+          <tr>
+            <td>"they never report variance across seeds"</td>
+            <td class="role-req">Request</td>
+            <td><strong>Valid and material (0.9).</strong> Confirmed: no seed variance anywhere. This directly undercuts the "superiority" evaluation above — the two spans are in tension, worth surfacing.</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p>The payoff is that last row. Because the assistant reasons over roles <em>and their relations</em>, it catches that an unsupported evaluation ("clearly demonstrates superiority") is contradicted by the reviewer's own request (no variance reported). A draft-writing tool would have smoothed both into fluent prose. A role-checking tool hands the tension back to the human to resolve.</p>
+
+      <h2>The proposed system</h2>
+      <ol>
+        <li><strong>Argument-role classifier as the trigger.</strong> The agent runs the human review through a role classifier (Fact / Evaluation / Request, extending the AMPERE scheme). This segmentation is the entry point for everything downstream.</li>
+        <li><strong>Each role maps to a predicated feedback type.</strong> Facts → factual verification against the paper's full text; Evaluations → validity/groundedness against paper and cited literature; Requests → necessity checks (already answered? in scope? novel?). The Fact check connects to long-context claim verification, which I studied in <a href="https://engsalem.github.io/#news" target="_blank" rel="noreferrer">SynClaimEval</a>.</li>
+        <li><strong>A quality score plus an explanation, per span.</strong> Not "3/5" but a calibrated score and a rationale the reviewer can act on — the explanation is what keeps the human doing the thinking.</li>
+      </ol>
+      <p>Crucially, this inverts the anchoring problem. A draft-writing assistant pulls the reviewer toward the model's text; a role-checking assistant pushes the reviewer back toward the paper and their own reasoning — <em>"you claimed the method is novel; here's the prior work you didn't mention; you decide."</em> It provokes thought rather than supplying a conclusion.</p>
+
+      <h2>How this differs from prior work</h2>
+      <p>I want to be precise about what is and isn't new here, because several nearby ideas already exist.</p>
+      <p>In Hua et al., argument roles served only as auxiliary features for training a review-quality prediction model — the roles informed a prediction, but they never selected what kind of feedback a span should receive.</p>
+      <p>The <em>position</em> that LLMs should give feedback on human reviews rather than replace them is now well argued — recent position papers make exactly this case and even propose global quality rubrics (fidelity, clarity, fairness, proportionality, constructiveness). Large deployments like the ICLR Review Feedback Agent already check human reviews for vagueness and misunderstanding. And decomposition itself is not new: TreeReview breaks review into sub-questions, and DISAPERE (NAACL 2022) models discourse structure in review discussions.</p>
+      <p>What I add is the <strong>coupling</strong>: argument-role classification as the routing function that assigns each span a single predicated check, at span granularity rather than document granularity. Prior rubrics treat their criteria as parallel virtues applied to the whole review; here the role is a <em>typing discipline</em> that selects the one check a span can meaningfully receive. The role vocabulary itself (Fact / Evaluation / Request) is Hua et al.'s; the routing of role-to-check is the piece I claim.</p>
+
+      <h2>Bottlenecks (the honest part)</h2>
+      <div class="callout">
+        <h3>1. Evaluating the judges</h3>
+        <p>The assistant scores review spans — but who validates the assistant? LLM judges correlate weakly with human judgment, inflate scores, and reward fluency. If the role evaluator inherits those pathologies, we've just moved the monoculture up one level. This needs genuine human evaluation of the evaluator — ideally adversarial and calibrated against expert meta-reviewers — before any deployment.</p>
+      </div>
+      <div class="callout">
+        <h3>2. The explanations only pay off under human–AI collaboration</h3>
+        <p>A per-span rationale is worthless if the reviewer rubber-stamps it, and worthless if they ignore it. Its utility is <em>entirely</em> in the loop: the reviewer reads "this request may already be answered in Section 4," checks, and either revises or holds firm. That has to be studied as a collaboration — measuring whether the tool improves the reviewer's reasoning, not just changes their text.</p>
+      </div>
+      <p>Both bottlenecks are, I'd argue, features. They force the human to stay the final judge — which is the entire point.</p>
+
+      <h2>Why this is the right first step</h2>
+      <p>If the goal were only to reduce reviewer burden, writing the review is the shortest path. But the goal should be <strong>reliable science with reviewers who can still review.</strong> An argument-grounded evaluator threads that needle: it uses the machine where the machine is strong — segmenting structure, verifying claims against long text, flagging redundancy — and keeps the human where the human is irreplaceable: judgment, taste, deciding what the field should value.</p>
+      <!-- <p class="lead-para" style="text-align:center; color:#7c4a03; font-weight:600;">Don't automate the review — instrument it.</p> -->
+
+      <hr class="sep" />
+
+      <h2>References &amp; pointers</h2>
+      <ul class="refs">
+        <li>Hua, Nikolov, Badugu, Wang. <strong>Argument Mining for Understanding Peer Reviews.</strong> NAACL 2019. <em>(AMPERE dataset; Fact / Evaluation / Request roles.)</em></li>
+        <li>Kennard et al. <strong>DISAPERE: A Dataset for Discourse Structure in Peer Review Discussions.</strong> NAACL 2022.</li>
+        <li>Thakkar et al. <strong>Can LLM feedback enhance review quality? A randomized study of 20K reviews at ICLR 2025.</strong></li>
+        <li>Yun, Kwon, Kim, Kim. <strong>Position on LLM-Assisted Peer Review: Addressing the Reviewer Gap through Mentoring and Feedback.</strong> 2026.</li>
+        <li>Chang et al. <strong>TreeReview: structured question decomposition for peer review.</strong> 2025.</li>
+        <li>Elaraby, Litman. <strong>ArgLegalSumm: Improving Abstractive Summarization of Legal Documents with Argument Mining.</strong> COLING 2022.</li>
+        <li>Elaraby, Litman. <strong>ARC: Argument Representation and Coverage Analysis for Zero-Shot Long Document Summarization.</strong> EACL 2026.</li>
+        <li>Elaraby et al. <strong>SynClaimEval: Evaluating the Utility of Synthetic Data in Long-Context Claim Verification.</strong> Eval4NLP @ AACL 2025.</li>
+      </ul>
+  
+    </article>
+
+    <hr class="sep" />
+    <footer>
+      <p>© 2026 Mohamed Elaraby · <a href="../blog.html">All posts</a> · <a href="../index.html">Home</a></p>
+    </footer>
+  </div>
+</body>
+</html>
