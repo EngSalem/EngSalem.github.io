@@ -271,7 +271,7 @@
       <p>The <em>position</em> that LLMs should give feedback on human reviews rather than replace them is now well argued — recent position papers make exactly this case and even propose global quality rubrics (fidelity, clarity, fairness, proportionality, constructiveness). Large deployments like the ICLR Review Feedback Agent already check human reviews for vagueness and misunderstanding. And decomposition itself is not new: TreeReview breaks review into sub-questions, and DISAPERE (NAACL 2022) models discourse structure in review discussions.</p>
       <p>What I add is the <strong>coupling</strong>: argument-role classification as the routing function that assigns each span a single predicated check, at span granularity rather than document granularity. Prior rubrics treat their criteria as parallel virtues applied to the whole review; here the role is a <em>typing discipline</em> that selects the one check a span can meaningfully receive. The role vocabulary itself (Fact / Evaluation / Request) is Hua et al.'s; the routing of role-to-check is the piece I claim.</p>
 
-      <h2>Bottlenecks (the honest part)</h2>
+      <h2>Bottlenecks</h2>
       <div class="callout">
         <h3>1. Evaluating the judges</h3>
         <p>The assistant scores review spans — but who validates the assistant? LLM judges correlate weakly with human judgment, inflate scores, and reward fluency. If the role evaluator inherits those pathologies, we've just moved the monoculture up one level. This needs genuine human evaluation of the evaluator — ideally adversarial and calibrated against expert meta-reviewers — before any deployment.</p>
